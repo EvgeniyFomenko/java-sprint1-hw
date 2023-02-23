@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class StepTracker {
     private final static MonthData[] monthData = new MonthData[12];
     private final Scanner scanner;
-    int goalByStepsPerDay;
+    private int goalByStepsPerDay;
 
     public StepTracker(Scanner scanner) {
         this.scanner = scanner;

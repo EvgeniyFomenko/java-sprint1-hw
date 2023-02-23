@@ -16,7 +16,7 @@ public class Main {
             } else if (key == 2) {
                 stepTracker.addNewNumberStepsPerDay();
             } else if (key == 3) {
-                System.out.println("Выполняется логика комманды 3");
+                stepTracker.printStatistic();
             } else if (key == 0) {
                 System.out.println("Выполняется выход");
                 return;
