@@ -3,13 +3,13 @@ package ru.efomenko;
 public class MonthData {
     int[] days = new int[31];
 
-    void printDaysAndStepsFromMonth() {
+    public void printDaysAndStepsFromMonth() {
         for (int j = 0; j < days.length; j++) {
             System.out.println((j + 1) + "день: " + days[j]);
         }
     }
 
-    int sumStepsFromMonth() {
+    public int sumStepsFromMonth() {
         int sumSteps = 0;
         for (int day : days) {
             sumSteps += day;
@@ -17,7 +17,8 @@ public class MonthData {
         return sumSteps;
     }
 
-    int maxSteps() {
+
+    public int maxSteps() {
         int maxStepsDay = 0;
         for (int day : days) {
             if (maxStepsDay < day) {
