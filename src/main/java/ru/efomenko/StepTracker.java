@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class StepTracker {
     private final static MonthData[] monthData = new MonthData[12];
     private final Scanner scanner;
-
+    int goalByStepsPerDay;
     public StepTracker(Scanner scanner) {
         this.scanner = scanner;
         for (int j = 0; j < monthData.length; j++) {
             monthData[j] = new MonthData();
         }
+        goalByStepsPerDay = 10000;
     }
 
     public void addNewNumberStepsPerDay() {
@@ -25,6 +26,18 @@ public class StepTracker {
             return;
         }
         monthData[month - 1].days[day - 1] = steps;
+        System.out.println("Данные сохранены");
 
+    }
+
+    public void changeStepGoal(){
+        System.out.println("Введите новую цель колличества шагов");
+        int newGoal = scanner.nextInt();
+        if(newGoal <=0){
+            System.out.println("Установка такой цели невозможна. Введите положительное число, больше нуля");
+            return;
+        }
+        goalByStepsPerDay = newGoal;
+        System.out.println("Цель установлена");
     }
 }
