@@ -53,11 +53,11 @@ public class StepTracker {
         int sumSteps = monthDataNow.sumStepsFromMonth();
         Converter converter = new Converter();
         monthData[month - 1].printDaysAndStepsFromMonth();
-        System.out.println("Общее количество шагов за месяц " + sumSteps);
-        System.out.println("Максимальное пройденное количество шагов в месяце" + monthDataNow.maxSteps());
-        System.out.println("Среднее количество шагов" + month / monthDataNow.days.length);
-        System.out.println("Пройденная дистанция (в км)" + converter.convertToKm(sumSteps));
-        System.out.println("Количество сожжённых килокалорий" + converter.convertStepsToKilocalories(sumSteps));
-        System.out.println("лучшая серия: максимальное количество подряд идущих дней, в течение которых количество шагов за день было равно или выше целевого." + monthDataNow.bestSeries(goalByStepsPerDay));
+        System.out.println("Общее количество шагов за месяц: " + sumSteps);
+        System.out.println("Максимальное пройденное количество шагов в месяце: " + monthDataNow.maxSteps());
+        System.out.println("Среднее количество шагов: " + sumSteps / monthDataNow.days.length);
+        System.out.println("Пройденная дистанция (в км): " + converter.convertToKm(sumSteps));
+        System.out.println("Количество сожжённых килокалорий: " + converter.convertStepsToKilocalories(sumSteps));
+        System.out.println("лучшая серия: максимальное количество подряд идущих дней, в течение которых количество шагов за день было равно или выше целевого: " + monthDataNow.bestSeries(goalByStepsPerDay));
     }
 }

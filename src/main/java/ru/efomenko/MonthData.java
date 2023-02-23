@@ -5,7 +5,7 @@ public class MonthData {
 
     public void printDaysAndStepsFromMonth() {
         for (int j = 0; j < days.length; j++) {
-            System.out.println((j + 1) + "день: " + days[j]);
+            System.out.println((j + 1) + " день : " + days[j]);
         }
     }
 
