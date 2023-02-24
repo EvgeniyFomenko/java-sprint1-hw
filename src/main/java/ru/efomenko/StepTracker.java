@@ -3,16 +3,14 @@ package ru.efomenko;
 import java.util.Scanner;
 
 public class StepTracker {
-    private final static MonthData[] monthData = new MonthData[12];
+    private final MonthData[] monthData = new MonthData[12];
     private final Scanner scanner;
     private int goalByStepsPerDay;
 
     public StepTracker(Scanner scanner) {
         this.scanner = scanner;
-        for (int j = 0; j < monthData.length; j++) {
-            monthData[j] = new MonthData();
-        }
         goalByStepsPerDay = 10000;
+        initMonthData();
     }
 
     public void addNewNumberStepsPerDay() {
@@ -59,5 +57,10 @@ public class StepTracker {
         System.out.println("Пройденная дистанция (в км): " + converter.convertToKm(sumSteps));
         System.out.println("Количество сожжённых килокалорий: " + converter.convertStepsToKilocalories(sumSteps));
         System.out.println("лучшая серия: максимальное количество подряд идущих дней, в течение которых количество шагов за день было равно или выше целевого: " + monthDataNow.bestSeries(goalByStepsPerDay));
+    }
+    private void initMonthData(){
+        for (int j = 0; j < monthData.length; j++) {
+            monthData[j] = new MonthData();
+        }
     }
 }

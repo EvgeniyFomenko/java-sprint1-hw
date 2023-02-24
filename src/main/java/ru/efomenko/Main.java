@@ -10,7 +10,7 @@ public class Main {
         StepTracker stepTracker = new StepTracker(scanner);
         while (true) {
             printMenu();
-            int key = scanner.nextInt();
+            int key = getKey(scanner);
             if (key == 1) {
                 stepTracker.changeStepGoal();
             } else if (key == 2) {
@@ -31,5 +31,9 @@ public class Main {
         System.out.println("2 - Сохранение пройденного количества шагов за день");
         System.out.println("3 - вывод статистики за определённый месяц");
         System.out.println("0 - выход");
+    }
+
+    static int getKey(Scanner scanner) {
+        return scanner.hasNextInt() ? scanner.nextInt() : -1;
     }
 }
