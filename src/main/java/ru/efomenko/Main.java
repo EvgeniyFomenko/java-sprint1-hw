@@ -34,6 +34,11 @@ public class Main {
     }
 
     static int getKey(Scanner scanner) {
-        return scanner.hasNextInt() ? scanner.nextInt() : -1;
+        if (scanner.hasNextInt()) {
+            return scanner.nextInt();
+        } else {
+            scanner.next();
+            return -1;
+        }
     }
 }

@@ -30,9 +30,15 @@ public class MonthData {
 
     int bestSeries(int goalByStepsPerDay) {
         int bestSeries = 0;
+        int series = 0;
         for (int day : days) {
             if (day >= goalByStepsPerDay) {
-                bestSeries++;
+                series++;
+            } else {
+                if (series > bestSeries) {
+                    bestSeries = series;
+                }
+                series = 0;
             }
         }
         return bestSeries;
